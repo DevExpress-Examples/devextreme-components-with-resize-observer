@@ -1,0 +1,103 @@
+<div class="demo-container">
+  <ng-template #dialogTemplate>
+    <h2 mat-dialog-title>Delete all elements?</h2>
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>Cancel</button>
+
+    </mat-dialog-actions>
+    <mat-dialog-content>
+
+    </mat-dialog-content>
+
+
+  </ng-template>
+  <dx-toolbar class="demo-header">
+    <dxi-item widget="dxButton" location="before" [options]="buttonProperies"></dxi-item>
+  </dx-toolbar>
+  <dx-drawer template="template" [(opened)]="isDrawerOpen" [height]="'calc(100% - 40px)'" [closeOnOutsideClick]="false">
+    <div *dxTemplate="let data of 'template'" style="height:100%;width: 200px">
+      <dx-list class="panel-list dx-theme-accent-as-background-color" [dataSource]="navigation"
+        [hoverStateEnabled]="false" [activeStateEnabled]="false" [focusStateEnabled]="false">
+      </dx-list>
+    </div>
+    <div id="content" class="demo-content">
+      <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+        <mat-tab label="Chart">
+          <dx-chart id="chart" title="World Population by Decade" (onInitialized)="onChartInitialized($event)"
+            [dataSource]="populationData">
+            <dxi-series type="bar"></dxi-series>
+            <dxo-argument-axis [tickInterval]="10">
+              <dxo-label>
+                <dxo-format type="decimal"></dxo-format>
+              </dxo-label>
+            </dxo-argument-axis>
+          </dx-chart>
+        </mat-tab>
+        <mat-tab label="DataGrid">
+          <dx-data-grid id="gridContainer" (onInitialized)="onDataGridInitialized($event)" [height]="400"
+            [dataSource]="dataSource" keyExpr="ID" [columnHidingEnabled]="true" [showBorders]="true">
+            <dxo-scrolling mode="virtual"></dxo-scrolling>
+            <dxo-grouping [contextMenuEnabled]="true" expandMode="rowClick"></dxo-grouping>
+            <dxo-group-panel [visible]="true"
+              emptyPanelText="Use the context menu of header columns to group data"></dxo-group-panel>
+            <dxo-paging [pageSize]="8"></dxo-paging>
+            <dxo-column-chooser [enabled]="true" mode="select"></dxo-column-chooser>
+            <dxi-column [allowGrouping]="false" dataField="OrderNumber" [width]="130"
+              caption="Invoice Number"></dxi-column>
+            <dxi-column dataField="CustomerStoreCity" caption="City"></dxi-column>
+            <dxi-column dataField="CustomerStoreState" caption="State"></dxi-column>
+            <dxi-column dataField="Employee"></dxi-column>
+            <dxi-column dataField="OrderDate" dataType="date"></dxi-column>
+            <dxi-column dataField="SaleAmount" format="currency"></dxi-column>
+          </dx-data-grid>
+        </mat-tab>
+        <mat-tab label="HtmlEditor">
+          <dx-html-editor height="400px" (onInitialized)="onHtmlEditorInitialized($event)">
+            <dxo-toolbar [multiline]="false">
+              <dxi-item name="undo"></dxi-item>
+              <dxi-item name="redo"></dxi-item>
+              <dxi-item name="separator"></dxi-item>
+              <dxi-item name="size" [acceptedValues]="fontSizeValues"></dxi-item>
+              <dxi-item name="font" [acceptedValues]="fontFamilyValues"></dxi-item>
+              <dxi-item name="separator"></dxi-item>
+              <dxi-item name="bold"></dxi-item>
+              <dxi-item name="italic"></dxi-item>
+              <dxi-item name="strike"></dxi-item>
+              <dxi-item name="underline"></dxi-item>
+              <dxi-item name="separator"></dxi-item>
+              <dxi-item name="alignLeft"></dxi-item>
+              <dxi-item name="alignCenter"></dxi-item>
+              <dxi-item name="alignRight"></dxi-item>
+              <dxi-item name="alignJustify"></dxi-item>
+              <dxi-item name="separator"></dxi-item>
+              <dxi-item name="orderedList"></dxi-item>
+              <dxi-item name="bulletList"></dxi-item>
+              <dxi-item name="separator"></dxi-item>
+              <dxi-item name="header" [acceptedValues]="headerSizeValues"></dxi-item>
+              <dxi-item name="separator"></dxi-item>
+              <dxi-item name="color"></dxi-item>
+              <dxi-item name="background"></dxi-item>
+              <dxi-item name="separator"></dxi-item>
+              <dxi-item name="link"></dxi-item>
+              <dxi-item name="image"></dxi-item>
+              <dxi-item name="separator"></dxi-item>
+              <dxi-item name="clear"></dxi-item>
+              <dxi-item name="codeBlock"></dxi-item>
+              <dxi-item name="blockquote"></dxi-item>
+              <dxi-item name="separator"></dxi-item>
+              <dxi-item name="insertTable"></dxi-item>
+              <dxi-item name="deleteTable"></dxi-item>
+              <dxi-item name="insertRowAbove"></dxi-item>
+              <dxi-item name="insertRowBelow"></dxi-item>
+              <dxi-item name="deleteRow"></dxi-item>
+              <dxi-item name="insertColumnLeft"></dxi-item>
+              <dxi-item name="insertColumnRight"></dxi-item>
+              <dxi-item name="deleteColumn"></dxi-item>
+            </dxo-toolbar>
+            <dxo-media-resizing [enabled]="true"> </dxo-media-resizing>
+          </dx-html-editor>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </dx-drawer>
+</div>

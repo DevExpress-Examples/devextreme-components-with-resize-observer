@@ -1,0 +1,20 @@
+.demo-container {
+  width: 100%;
+  height: 100vh;
+}
+.demo-content {
+  width: 100%;
+  background-color: #f8f9fa;
+  height: 100%;
+}
+.demo-header {
+    height: 40px;
+    background-color: #e0e0e0;
+}
+.dx-theme-material-typography a.btn-popup {
+  color: white;
+}
+.btn-popup {
+    margin: 20px;
+   
+}
