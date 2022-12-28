@@ -20,9 +20,9 @@ In this example, we also demonstrated how to reduce the number of calls using th
 ## Files to Look At
 
 - **jQuery**    
-    - [index.html](jQuery/index.html)
-    - [index.js](jQuery/index.js)   
-    - [utils.js](jQuery/utils.js)
+    - [index.html](jQuery/src/index.html)
+    - [index.js](jQuery/src/index.js)   
+    - [utils.js](jQuery/src/utils.js)
 - **Angular**
     - [app.component.html](Angular/src/app/app.component.html)
     - [app.component.ts](Angular/src/app/app.component.ts)
@@ -30,6 +30,6 @@ In this example, we also demonstrated how to reduce the number of calls using th
 
 ## Documentation
 
-- [updateDimensions - API Reference](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Methods/#updateDimensions)
-- [repaint - API Reference](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Methods/#repaint)
-- [render - API Reference](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxChart/Methods/#render)
+- [API Reference - updateDimensions](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Methods/#updateDimensions)
+- [API Reference - repaint](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Methods/#repaint)
+- [API Reference - render](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxChart/Methods/#render)
