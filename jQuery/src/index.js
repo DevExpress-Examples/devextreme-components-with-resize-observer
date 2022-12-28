@@ -32,7 +32,7 @@ $(function () {
     });
 
     $('#gridContainer').dxDataGrid({
-        onInitialized3({ component, element }) {
+        onInitialized({ component, element }) {
             helper.subscribe(component, element.parent().get(0), component.updateDimensions, 100, 0);
         },
         dataSource: orders,
@@ -82,7 +82,7 @@ $(function () {
 
     $("#htmlEditor")
         .dxHtmlEditor({
-            onInitialized3({ component, element }) {
+            onInitialized({ component, element }) {
                 helper.subscribe(component, element.parent().get(0), component.repaint, 100);
             },
             height: 430,
@@ -165,7 +165,7 @@ $(function () {
             }
         });
     $('#barChart').dxChart({
-        onInitialized3({ component, element }) {
+        onInitialized({ component, element }) {
             helper.subscribe(component, element.parent().get(0), component.render, 0, 100);
         },
         dataSource,
