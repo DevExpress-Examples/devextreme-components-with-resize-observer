@@ -5,7 +5,7 @@
 <!-- default badges end -->
 #  How to update a DevExtreme component if an external container state  is changed
 
-This example demonstrates how to implement `ResizeObserver` to update a DevExtreme component layout if an external container visibility/size is changed
+This example demonstrates how to implement `ResizeObserver` to update a DevExtreme component layout if an external container visibility/size is changed.
 
 No ResizeObserver 
 
@@ -17,17 +17,18 @@ With ResizeObserver
 
 ## Implementation details
 
-Implement an `ObserverHelper` helper class. This class creates a single ResizeObserver instance and ccontains the following `API`:
+Implement an `ObserverHelper` helper class. This class creates a single ResizeObserver instance and contains the following `API`:
 
-- The `subscribe` method allows you to track changes in a parent container for a required component. It accepts the following parameters:
-    - `component` - a widget instance
-    - `element` - a DOM node (HTML element) which state you wish to track
-    - `resizeAction` - a callback that needs to be called
-    - `delta` - specify this parameter to avoid changing a component if size changes are small  
-    - `delay` - specify this parameter to re-render a component with a delay (e.g. after animation is finished)
-- The `disconnect` method clears all active subscriptions and removes a `ResizeObserver` instance.    
+* The `subscribe` method allows you to track changes in a parent container for the required component. It accepts the following parameters:
+   * `component` - a widget instance.
+   * `element` - the DOM node (HTML element) whose state you wish to track.
+   * `resizeAction` - the callback that needs to be called.
+   * `delta` - specify this parameter to avoid changing a component if size changes are small.
+   * `delay` - specify this parameter to re-render a component with a delay (e.g., after animation is finished).
 
-The `resizeCallback` function in the helper class is called every time a container size is changed. 
+* The `disconnect` method clears all active subscriptions and removes a `ResizeObserver` instance.
+
+The `resizeCallback` function in the helper class is called every time the container size is changed.
 In this example, we also demonstrated how to reduce the number of calls using the `delay` and `delta` parameters.
 
 ## Files to Look At
