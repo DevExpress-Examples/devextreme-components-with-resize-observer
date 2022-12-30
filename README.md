@@ -7,11 +7,13 @@
 
 This example demonstrates how to implement `ResizeObserver` to update a DevExtreme component layout if an external container visibility/size is changed
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DevExtreme without ResizeObserver &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DevExtreme with ResizeObserver
-<p align="middle">
-  <img src="https://user-images.githubusercontent.com/22076961/209829629-0a2ee874-bb60-4393-96fe-8704d45da4ca.gif" /> 
-  <img src="https://user-images.githubusercontent.com/22076961/209830089-3d35f5cb-772e-4ed4-8102-ce1073a6f42b.gif" />
-</p>
+No ResizeObserver 
+
+![NotWorkingNew](https://user-images.githubusercontent.com/22076961/210073727-5b3a5899-2679-4953-9752-e869046aab58.gif)
+
+With ResizeObserver
+
+![WorkingNew](https://user-images.githubusercontent.com/22076961/210073705-b6db18d4-7fd1-4b4a-97e3-80a565471a2a.gif)
 
 ## Implementation details
 
@@ -44,4 +46,5 @@ In this example, we also demonstrated how to reduce the number of calls using th
 - [API Reference - updateDimensions](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Methods/#updateDimensions)
 - [API Reference - repaint](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Methods/#repaint)
 - [API Reference - render](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxChart/Methods/#render)
+
 
