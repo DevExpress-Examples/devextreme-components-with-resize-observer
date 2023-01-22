@@ -1,22 +1,10 @@
 <div class="demo-container">
-  <ng-template #dialogTemplate>
-    <h2 mat-dialog-title>Delete all elements?</h2>
-    <mat-dialog-actions>
-      <button mat-button mat-dialog-close>Cancel</button>
-
-    </mat-dialog-actions>
-    <mat-dialog-content>
-
-    </mat-dialog-content>
-
-
-  </ng-template>
   <dx-toolbar class="demo-header">
     <dxi-item widget="dxButton" location="before" [options]="buttonProperies"></dxi-item>
   </dx-toolbar>
-  <dx-drawer template="template" [(opened)]="isDrawerOpen" [height]="'calc(100% - 40px)'" [closeOnOutsideClick]="false">
+  <dx-drawer template="template" [(opened)]="isDrawerOpened" [height]="'calc(100% - 40px)'" [closeOnOutsideClick]="false">
     <div *dxTemplate="let data of 'template'" style="height:100%;width: 200px">
-      <dx-list class="panel-list dx-theme-accent-as-background-color" [dataSource]="navigation"
+      <dx-list class="dx-theme-accent-as-background-color" [dataSource]="navigation"
         [hoverStateEnabled]="false" [activeStateEnabled]="false" [focusStateEnabled]="false">
       </dx-list>
     </div>
@@ -25,7 +13,7 @@
         <mat-tab label="Chart">
           <dx-chart id="chart" title="World Population by Decade" (onInitialized)="onChartInitialized($event)"
             [dataSource]="populationData">
-            <dxi-series type="bar"></dxi-series>
+            <dxi-series name="World population" type="bar"></dxi-series>
             <dxo-argument-axis [tickInterval]="10">
               <dxo-label>
                 <dxo-format type="decimal"></dxo-format>

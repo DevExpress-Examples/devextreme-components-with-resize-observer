@@ -1,7 +1,4 @@
-.default-style {
-    margin: 50px 50px;
-    width: 90vh;
-}
+
 ::ng-deep .dx-viewport {
   margin: 0;
 }
@@ -17,11 +14,4 @@
 .demo-header {
     height: 40px;
     background-color: #e0e0e0;
-}
-.dx-theme-material-typography a.btn-popup {
-  color: white;
-}
-.btn-popup {
-    margin: 20px;
-
 }

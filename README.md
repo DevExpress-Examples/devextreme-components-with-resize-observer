@@ -5,7 +5,7 @@
 <!-- default badges end -->
 #  How to update a DevExtreme component if an external container state  is changed
 
-This example demonstrates how to implement `ResizeObserver` to update a DevExtreme component layout if an external container visibility/size is changed
+This example demonstrates how to implement `ResizeObserver` to update a DevExtreme component layout if an external container visibility/size is changed.
 
 ## Implementation details
 

@@ -6,8 +6,7 @@ $(function () {
         height: 'calc(100% - 40px)',
         closeOnOutsideClick: false,
         template() {
-            const $list = $('<div>').width(200).addClass('panel-list');
-
+            const $list = $('<div>').width(200);
             return $list.dxList({
                 dataSource: navigation,
                 hoverStateEnabled: false,
@@ -26,7 +25,7 @@ $(function () {
                 icon: 'menu',
                 onClick() {
                     drawer.toggle();
-                },
+                }
             },
         }],
     });
@@ -85,7 +84,7 @@ $(function () {
             onInitialized({ component, element }) {
                 helper.subscribe(component, element.parent().get(0), component.repaint, 100);
             },
-            height: 430,
+            height: 330,
             value: "",
             toolbar: {
                 multiline: false,

@@ -14,7 +14,7 @@ import { InitializedEvent as HtmlEditorInitializedEvent } from 'devextreme/ui/ht
 })
 export class AppComponent {
   title = 'Angular';
-  isDrawerOpen: boolean = false;
+  isDrawerOpened: boolean = false;
   headerSizeValues: (boolean | number)[] = [false, 1, 2, 3, 4, 5];
   fontSizeValues: string[] = [
     '8pt',
@@ -38,7 +38,7 @@ export class AppComponent {
 
   buttonProperies: ButtonProperies = {
     icon: 'menu',
-    onClick: () => (this.isDrawerOpen = !this.isDrawerOpen),
+    onClick: () => (this.isDrawerOpened = !this.isDrawerOpened),
   };
   navigation: List[];
   dataSource: Order[];
