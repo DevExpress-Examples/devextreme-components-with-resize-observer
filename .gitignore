@@ -306,6 +306,5 @@ TesterMetadata.xml
 
 # temp
 /ASP.NET Core
-/React
 /Vue
 /Angular/.angular/cache
