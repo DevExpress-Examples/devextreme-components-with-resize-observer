@@ -41,6 +41,11 @@ In this example, we also demonstrated how to reduce the number of calls using th
     - [app.component.html](Angular/src/app/app.component.html)
     - [app.component.ts](Angular/src/app/app.component.ts)
     - [observer.service.ts](Angular/src/app/observer.service.ts)
+- **React**
+    - [App.js](React/src/App.js)
+    - [Content.js](React/src/Content.js)
+    - [ResizeObserver.js](React/src/utils/ResizeObserver.js)
+    
 
 ## Documentation
 
