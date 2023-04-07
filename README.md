@@ -31,7 +31,7 @@ Implement an `ObserverHelper` helper class. This class creates a single ResizeOb
 The `resizeCallback` function in the helper class is called every time the container size is changed.
 In this example, we also demonstrated how to reduce the number of calls using the `delay` and `delta` parameters.
 
-## Files to Look At
+## Files to Review
 
 - **jQuery**    
     - [index.html](jQuery/src/index.html)
@@ -45,7 +45,6 @@ In this example, we also demonstrated how to reduce the number of calls using th
     - [App.js](React/src/App.js)
     - [Content.js](React/src/components/Content.js)
     - [ResizeObserver.js](React/src/utils/ResizeObserver.js)
-    
 
 ## Documentation
 
