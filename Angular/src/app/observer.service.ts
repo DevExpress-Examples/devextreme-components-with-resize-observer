@@ -36,7 +36,7 @@ export class ObserverHelper {
       ) {
         component.__observableHeight = height;
         component.__observableWidth = width;
-        console.log('resize', component)
+        if (width === 0 || height === 0) return;
         resizeAction && resizeAction.apply(component);
       }
     };

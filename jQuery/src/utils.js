@@ -32,6 +32,7 @@ class ObserverHelper {
             ) {
                 component.__observableHeight = height;
                 component.__observableWidth = width;
+                if (width === 0 || height === 0) return;
                 resizeAction && resizeAction.apply(component);
             }
         };
