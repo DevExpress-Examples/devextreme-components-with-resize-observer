@@ -1,54 +1,63 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/340354634/25.1.2%2B)
-[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1129779)
+![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/582915038/21.2.12%2B)
+[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1136710)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-# DevExtreme Examples Template
+#  How to update a DevExtreme component if an external container state  is changed
 
-This is the repository template for creating new examples. 
+This example demonstrates how to implement `ResizeObserver` to update a DevExtreme component layout if an external container visibility/size is changed.
 
-![Example image](images/image-template.png)
+No ResizeObserver 
 
-Use **DevExtreme _Product_ - _Task_** template for a title. 
+![NotWorkingNew](https://user-images.githubusercontent.com/22076961/210073727-5b3a5899-2679-4953-9752-e869046aab58.gif)
 
-Describe the solved task in this section.
+With ResizeObserver
 
-Put a screenshot/gif that illustrates the result here.
+![WorkingNew](https://user-images.githubusercontent.com/22076961/210073705-b6db18d4-7fd1-4b4a-97e3-80a565471a2a.gif)
 
-Then, add implementation details (steps, code snippets, and other technical information in a free form), or add a link to an existing document with implementation details. 
+## Implementation details
+
+Implement an `ObserverHelper` helper class. This class creates a single ResizeObserver instance and contains the following `API`:
+
+* The `subscribe` method allows you to track changes in a parent container for the required component. It accepts the following parameters:
+   * `component` - a widget instance.
+   * `element` - the DOM node (HTML element) whose state you wish to track.
+   * `resizeAction` - the callback that needs to be called.
+   * `delta` - specify this parameter to avoid changing a component if size changes are small.
+   * `delay` - specify this parameter to re-render a component with a delay (e.g., after animation is finished).
+
+* The `disconnect` method clears all active subscriptions and removes a `ResizeObserver` instance.
+
+The `resizeCallback` function in the helper class is called every time the container size is changed.
+In this example, we also demonstrated how to reduce the number of calls using the `delay` and `delta` parameters.
 
 ## Files to Review
 
+- **jQuery**    
+    - [index.html](jQuery/src/index.html)
+    - [index.js](jQuery/src/index.js)   
+    - [utils.js](jQuery/src/utils.js)
 - **Angular**
     - [app.component.html](Angular/src/app/app.component.html)
     - [app.component.ts](Angular/src/app/app.component.ts)
+    - [observer.service.ts](Angular/src/app/observer.service.ts)
 - **React**
-    - [App.tsx](React/src/App.tsx)
-- **Vue**
-    - [App.vue](Vue/src/App.vue)
-    - [Home.vue](Vue/src/components/HomeContent.vue)
-- **jQuery**
-    - [index.html](jQuery/src/index.html)
-    - [index.js](jQuery/src/index.js)
-- **ASP.NET Core**    
-    - [Index.cshtml](ASP.NET%20Core/Views/Home/Index.cshtml)
+    - [App.js](React/src/App.js)
+    - [Content.js](React/src/components/Content.js)
+    - [ResizeObserver.js](React/src/utils/ResizeObserver.js)
 
 ## Documentation
 
-- link
-- link
-- ...
+- [API Reference - updateDimensions](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Methods/#updateDimensions)
+- [API Reference - repaint](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Methods/#repaint)
+- [API Reference - render](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxChart/Methods/#render)
 
-## More Examples
 
-- link
-- link
-- ...
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 
-[<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=devextreme-examples-template&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=devextreme-examples-template&~~~was_helpful=no)
+[<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=devextreme-components-with-resize-observer&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=devextreme-components-with-resize-observer&~~~was_helpful=no)
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
