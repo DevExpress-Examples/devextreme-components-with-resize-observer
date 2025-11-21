@@ -42,7 +42,7 @@ function chartInitialized({ component, element }: ChartTypes.InitializedEvent): 
 
 function htmlEditorInitialized({ component, element }: HtmlEditorTypes.InitializedEvent): void {
   if (component && element?.parentNode instanceof Element) {
-    observerInstance.subscribe(component, element.parentNode, component.repaint, 100);
+    observerInstance.subscribe(component, element.parentNode, component.repaint, 0, 100);
   }
 }
 
