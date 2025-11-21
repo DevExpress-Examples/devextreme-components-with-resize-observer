@@ -1,3 +1,168 @@
-<div class="default-style">
-  <dx-button [text]="buttonText" (onClick)="onClick($event)"></dx-button>
+<div class="demo-container">
+  <dx-toolbar class="demo-header">
+    <dxi-toolbar-item
+      widget="dxButton"
+      location="before"
+      [options]="buttonProperies"
+    ></dxi-toolbar-item>
+  </dx-toolbar>
+  <dx-drawer
+    template="template"
+    [(opened)]="isDrawerOpened"
+    [height]="'calc(100% - 40px)'"
+    [closeOnOutsideClick]="false"
+  >
+    <div
+      *dxTemplate="let data of 'template'"
+      style="height: 100%; width: 200px"
+    >
+      <dx-list
+        class="dx-theme-accent-as-background-color"
+        [dataSource]="navigation"
+        [hoverStateEnabled]="false"
+        [activeStateEnabled]="false"
+        [focusStateEnabled]="false"
+      >
+      </dx-list>
+    </div>
+    <div id="content" class="demo-content">
+      <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+        <mat-tab label="Chart">
+          <dx-chart
+            id="chart"
+            title="World Population by Decade"
+            (onInitialized)="onChartInitialized($event)"
+            [dataSource]="populationData"
+          >
+            <dxi-chart-series
+              name="World population"
+              type="bar"
+            ></dxi-chart-series>
+            <dxo-chart-argument-axis [tickInterval]="10">
+              <dxo-chart-label>
+                <dxo-chart-format type="decimal"></dxo-chart-format>
+              </dxo-chart-label>
+            </dxo-chart-argument-axis>
+          </dx-chart>
+        </mat-tab>
+        <mat-tab label="DataGrid">
+          <dx-data-grid
+            id="gridContainer"
+            (onInitialized)="onDataGridInitialized($event)"
+            [height]="400"
+            [dataSource]="dataSource"
+            keyExpr="ID"
+            [columnHidingEnabled]="true"
+            [showBorders]="true"
+          >
+            <dxo-data-grid-scrolling mode="virtual"></dxo-data-grid-scrolling>
+            <dxo-data-grid-grouping
+              [contextMenuEnabled]="true"
+              expandMode="rowClick"
+            ></dxo-data-grid-grouping>
+            <dxo-data-grid-group-panel
+              [visible]="true"
+              emptyPanelText="Use the context menu of header columns to group data"
+            ></dxo-data-grid-group-panel>
+            <dxo-data-grid-paging [pageSize]="8"></dxo-data-grid-paging>
+            <dxo-data-grid-column-chooser
+              [enabled]="true"
+              mode="select"
+            ></dxo-data-grid-column-chooser>
+            <dxi-data-grid-column
+              [allowGrouping]="false"
+              dataField="OrderNumber"
+              [width]="130"
+              caption="Invoice Number"
+            ></dxi-data-grid-column>
+            <dxi-data-grid-column
+              dataField="CustomerStoreCity"
+              caption="City"
+            ></dxi-data-grid-column>
+            <dxi-data-grid-column
+              dataField="CustomerStoreState"
+              caption="State"
+            ></dxi-data-grid-column>
+            <dxi-data-grid-column dataField="Employee"></dxi-data-grid-column>
+            <dxi-data-grid-column
+              dataField="OrderDate"
+              dataType="date"
+            ></dxi-data-grid-column>
+            <dxi-data-grid-column
+              dataField="SaleAmount"
+              format="currency"
+            ></dxi-data-grid-column>
+          </dx-data-grid>
+        </mat-tab>
+        <mat-tab label="HtmlEditor">
+          <dx-html-editor
+            height="400px"
+            (onInitialized)="onHtmlEditorInitialized($event)"
+          >
+            <dxo-html-editor-toolbar [multiline]="false">
+              <dxi-html-editor-item name="undo"></dxi-html-editor-item>
+              <dxi-html-editor-item name="redo"></dxi-html-editor-item>
+              <dxi-html-editor-item name="separator"></dxi-html-editor-item>
+              <dxi-html-editor-item
+                name="size"
+                [acceptedValues]="fontSizeValues"
+              ></dxi-html-editor-item>
+              <dxi-html-editor-item
+                name="font"
+                [acceptedValues]="fontFamilyValues"
+              ></dxi-html-editor-item>
+              <dxi-html-editor-item name="separator"></dxi-html-editor-item>
+              <dxi-html-editor-item name="bold"></dxi-html-editor-item>
+              <dxi-html-editor-item name="italic"></dxi-html-editor-item>
+              <dxi-html-editor-item name="strike"></dxi-html-editor-item>
+              <dxi-html-editor-item name="underline"></dxi-html-editor-item>
+              <dxi-html-editor-item name="separator"></dxi-html-editor-item>
+              <dxi-html-editor-item name="alignLeft"></dxi-html-editor-item>
+              <dxi-html-editor-item name="alignCenter"></dxi-html-editor-item>
+              <dxi-html-editor-item name="alignRight"></dxi-html-editor-item>
+              <dxi-html-editor-item name="alignJustify"></dxi-html-editor-item>
+              <dxi-html-editor-item name="separator"></dxi-html-editor-item>
+              <dxi-html-editor-item name="orderedList"></dxi-html-editor-item>
+              <dxi-html-editor-item name="bulletList"></dxi-html-editor-item>
+              <dxi-html-editor-item name="separator"></dxi-html-editor-item>
+              <dxi-html-editor-item
+                name="header"
+                [acceptedValues]="headerSizeValues"
+              ></dxi-html-editor-item>
+              <dxi-html-editor-item name="separator"></dxi-html-editor-item>
+              <dxi-html-editor-item name="color"></dxi-html-editor-item>
+              <dxi-html-editor-item name="background"></dxi-html-editor-item>
+              <dxi-html-editor-item name="separator"></dxi-html-editor-item>
+              <dxi-html-editor-item name="link"></dxi-html-editor-item>
+              <dxi-html-editor-item name="image"></dxi-html-editor-item>
+              <dxi-html-editor-item name="separator"></dxi-html-editor-item>
+              <dxi-html-editor-item name="clear"></dxi-html-editor-item>
+              <dxi-html-editor-item name="codeBlock"></dxi-html-editor-item>
+              <dxi-html-editor-item name="blockquote"></dxi-html-editor-item>
+              <dxi-html-editor-item name="separator"></dxi-html-editor-item>
+              <dxi-html-editor-item name="insertTable"></dxi-html-editor-item>
+              <dxi-html-editor-item name="deleteTable"></dxi-html-editor-item>
+              <dxi-html-editor-item
+                name="insertRowAbove"
+              ></dxi-html-editor-item>
+              <dxi-html-editor-item
+                name="insertRowBelow"
+              ></dxi-html-editor-item>
+              <dxi-html-editor-item name="deleteRow"></dxi-html-editor-item>
+              <dxi-html-editor-item
+                name="insertColumnLeft"
+              ></dxi-html-editor-item>
+              <dxi-html-editor-item
+                name="insertColumnRight"
+              ></dxi-html-editor-item>
+              <dxi-html-editor-item name="deleteColumn"></dxi-html-editor-item>
+            </dxo-html-editor-toolbar>
+            <dxo-html-editor-media-resizing
+              [enabled]="true"
+            ></dxo-html-editor-media-resizing>
+          </dx-html-editor>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </dx-drawer>
 </div>

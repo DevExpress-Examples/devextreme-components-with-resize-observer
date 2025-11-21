@@ -1,5 +1,4 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/582915038/25.1.3%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1136710)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
@@ -43,9 +42,9 @@ In this example, we also demonstrated how to reduce the number of calls using th
     - [app.component.ts](Angular/src/app/app.component.ts)
     - [observer.service.ts](Angular/src/app/observer.service.ts)
 - **React**
-    - [App.js](React/src/App.js)
-    - [Content.js](React/src/components/Content.js)
-    - [ResizeObserver.js](React/src/utils/ResizeObserver.js)
+    - [App.tsx](React/src/App.tsx)
+    - [Content.tsx](React/src/components/Content.tsx)
+    - [ResizeObserver.ts](React/src/utils/ResizeObserver.ts)
 
 ## Documentation
 

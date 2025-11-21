@@ -1,16 +1,32 @@
 import { useCallback, useState } from 'react';
-import './App.css';
+
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
-import Button from 'devextreme-react/button';
+import './App.css';
+
+import Main from './components/Main';
+import Header from './components/Header';
 
 function App(): JSX.Element {
-  var [count, setCount] = useState<number>(0);
-  const clickHandler = useCallback(() => {
-    setCount((prev) => prev + 1);
-  }, [setCount]);
+  const [selectedIndex, setSelectedIndex] = useState<string>('1');
+  const [opened, setOpened] = useState<boolean>(true);
+
+  const selectedIndexChange = useCallback((_event: React.SyntheticEvent, newValue: string): void => {
+    setSelectedIndex(newValue);
+  }, []);
+
+  const onClick = useCallback((): void => {
+    setOpened((prev) => !prev);
+  }, []);
+
   return (
-    <div className="main">
-      <Button text={`Click count: ${count}`} onClick={clickHandler} />
+    <div className="demo-container">
+      <Header onClick={onClick} />
+      <Main opened={opened} selectedIndex={selectedIndex} selectedIndexChange={selectedIndexChange} />
     </div>
   );
 }
