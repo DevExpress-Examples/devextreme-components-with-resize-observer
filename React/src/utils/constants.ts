@@ -4,8 +4,5 @@ const headerValues = [false, 1, 2, 3, 4, 5];
 const heightValue = 'calc(100% - 40px)';
 
 export {
-    headerValues,
-    fontValues,
-    sizeValues,
-    heightValue
+  headerValues, fontValues, sizeValues, heightValue,
 };
