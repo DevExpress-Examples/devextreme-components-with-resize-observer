@@ -388,6 +388,3 @@ const orders = [{
   CustomerStoreCity: 'Phoenix',
   Employee: 'Clark Morgan',
 }];
-
-
-
