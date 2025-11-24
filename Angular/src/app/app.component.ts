@@ -44,7 +44,7 @@ export class AppComponent {
     'Verdana',
   ];
 
-  buttonProperies: DxButtonTypes.Properties = {
+  buttonProperties: DxButtonTypes.Properties = {
     icon: 'menu',
     onClick: (): void => {
       this.isDrawerOpened = !this.isDrawerOpened;

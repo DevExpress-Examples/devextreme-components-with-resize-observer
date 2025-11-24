@@ -3,7 +3,7 @@
     <dxi-toolbar-item
       widget="dxButton"
       location="before"
-      [options]="buttonProperies"
+      [options]="buttonProperties"
     ></dxi-toolbar-item>
   </dx-toolbar>
   <dx-drawer
@@ -48,6 +48,7 @@
         <mat-tab label="DataGrid">
           <dx-data-grid
             id="gridContainer"
+            class="demo-content-grid"
             (onInitialized)="onDataGridInitialized($event)"
             [height]="400"
             [dataSource]="dataSource"
@@ -81,6 +82,7 @@
             ></dxi-data-grid-column>
             <dxi-data-grid-column
               dataField="CustomerStoreState"
+              [groupIndex]="0"
               caption="State"
             ></dxi-data-grid-column>
             <dxi-data-grid-column dataField="Employee"></dxi-data-grid-column>
