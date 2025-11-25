@@ -46,7 +46,10 @@ In this example, we also demonstrated how to reduce the number of calls using th
     - [App.tsx](React/src/App.tsx)
     - [Content.tsx](React/src/components/Content.tsx)
     - [ResizeObserver.ts](React/src/utils/ResizeObserver.ts)
-
+- **Vue**
+    - [InnerContent.vue](Vue/src/components/InnerContent.vue)
+    - [ResizeObserver.ts](Vue/src/utils/ResizeObserver.ts) 
+    
 ## Documentation
 
 - [API Reference - updateDimensions](https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Methods/#updateDimensions)
