@@ -24,7 +24,6 @@ import { populationData, orders } from '../data';
 
 interface ContentProps {
   selectedIndex: string;
-  // eslint-disable-next-line no-unused-vars
   selectedIndexChange: (_event: React.SyntheticEvent, newValue: string) => void;
 }
 

@@ -15,7 +15,6 @@ class ObserverHelper {
 
   isSizeChanged = (value1: number, value2: number, delta: number): boolean => !value1 || Math.abs(value2 - value1) > delta;
 
-  // eslint-disable-next-line no-unused-vars
   debounce = (func: Function, timeout: number): ((...args: any[]) => void) => {
     // eslint-disable-next-line @typescript-eslint/init-declarations
     let timer: number;

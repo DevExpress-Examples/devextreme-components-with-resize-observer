@@ -6,7 +6,6 @@ import { heightValue } from '../utils/constants';
 
 interface MainProps {
   opened: boolean;
-  // eslint-disable-next-line no-unused-vars
   selectedIndexChange: (_event: React.SyntheticEvent, newValue: string) => void;
   selectedIndex: string;
 }
