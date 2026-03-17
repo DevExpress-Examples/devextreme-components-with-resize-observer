@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "type": "module",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
@@ -14,13 +13,13 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
-    "devextreme": "^25.2.3",
+    "@mdi/font": "^7.4.47",
+    "devextreme": "25.2.3",
     "devextreme-dist": "^25.2.3",
-    "devextreme-vue": "^25.2.3",
+    "devextreme-vue": "25.2.3",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
-    "vuetify": "^3.7.5",
-    "@mdi/font": "^7.4.47"
+    "vuetify": "^3.7.5"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",

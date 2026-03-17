@@ -16,7 +16,6 @@ class ObserverHelper {
   isSizeChanged = (value1: number, value2: number, delta: number): boolean => !value1 || Math.abs(value2 - value1) > delta;
 
   debounce = (func: Function, timeout: number): ((...args: any[]) => void) => {
-    // eslint-disable-next-line @typescript-eslint/init-declarations
     let timer: number;
     return (...args: any[]): void => {
       window.clearTimeout(timer);
@@ -66,8 +65,8 @@ class ObserverHelper {
       delay ? this.debounce(newResizeCallback, delay) : newResizeCallback,
     );
     this.__resizeCallbacks.set(element, listeners);
-    component.on('disposing', ({ component }: any): void => {
-      this.unsubscribe(element, component.element());
+    component.on('disposing', ({ component: disposingComponent }: any): void => {
+      this.unsubscribe(element, disposingComponent.element());
     });
   }
 
@@ -95,4 +94,4 @@ class ObserverHelper {
 
 const observerInstance = new ObserverHelper();
 
-export { observerInstance };
+export default observerInstance;

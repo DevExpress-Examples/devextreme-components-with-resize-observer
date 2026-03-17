@@ -17,7 +17,7 @@ import DataGrid, {
 import type { DataGridTypes } from 'devextreme-react/data-grid';
 import type { ChartTypes } from 'devextreme-react/chart';
 import type { HtmlEditorTypes } from 'devextreme-react/html-editor';
-import { observerInstance } from '../utils/ResizeObserver';
+import observerInstance from '../utils/ResizeObserver';
 import { headerValues, fontValues, sizeValues } from '../utils/constants';
 import TabContent from './TabContent';
 import { populationData, orders } from '../data';

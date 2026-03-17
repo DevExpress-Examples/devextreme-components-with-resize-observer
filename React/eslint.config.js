@@ -31,6 +31,7 @@ export default [
     files: ['**/*.ts', '**/*.tsx'],
     rules: {
       'react/react-in-jsx-scope': 'off',
+      'import/extensions': 'off',
       'import/no-extraneous-dependencies': ['error', {
         devDependencies: [
           '**/vitest.config.ts',

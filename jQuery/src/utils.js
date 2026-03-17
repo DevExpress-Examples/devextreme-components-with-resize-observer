@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 class ObserverHelper {
   constructor() {
     this.__resizeCallbacks = new Map();
@@ -39,7 +38,6 @@ class ObserverHelper {
 
   subscribe(component, element, resizeAction, delta, delay) {
     if (!resizeAction) {
-      // eslint-disable-next-line no-console
       console.error('Subscription failed. No reisze callback passed');
       return;
     }

@@ -18,7 +18,6 @@ export class ObserverHelper {
   isSizeChanged = (value1: number, value2: number, delta: number): boolean => !value1 || Math.abs(value2 - value1) > delta;
 
   debounce = (func: Function, timeout: number): ((...args: any[]) => void) => {
-    // eslint-disable-next-line @typescript-eslint/init-declarations
     let timer: number;
     return (...args: any[]): void => {
       window.clearTimeout(timer);
@@ -49,7 +48,6 @@ export class ObserverHelper {
     delay: number,
   ): void {
     if (!resizeAction || !element) {
-      // eslint-disable-next-line no-console
       console.error('Subscription failed. No resize callback or element passed');
       return;
     }
@@ -76,7 +74,6 @@ export class ObserverHelper {
   unsubscribe(key1: Element, key2: Element): void {
     const listeners = this.__resizeCallbacks.get(key1);
     if (!listeners) {
-      // eslint-disable-next-line no-console
       console.error('Unsubscribe failed');
       return;
     }

@@ -27,8 +27,8 @@
   "dependencies": {
     "bootstrap": "5.2.3",
     "browser-sync": "^3.0.2",
-    "devextreme": "^25.2.3",
-    "devextreme-dist": "^25.2.3",
+    "devextreme": "25.2.3",
+    "devextreme-dist": "25.2.3",
     "jquery": "^3.7.1"
   }
 }
