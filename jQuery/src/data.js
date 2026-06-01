@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const navigation = [
   { id: 1, text: 'Products', icon: 'product' },
   { id: 2, text: 'Sales', icon: 'money' },

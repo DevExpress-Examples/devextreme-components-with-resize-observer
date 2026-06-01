@@ -1,4 +1,5 @@
 /* eslint-disable no-underscore-dangle */
+/* eslint-disable no-unused-vars */
 class ObserverHelper {
   constructor() {
     this.__resizeCallbacks = new Map();
