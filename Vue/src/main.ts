@@ -1,3 +1,8 @@
+import config from 'devextreme/core/config';
+import { licenseKey } from './devextreme-license';
+
+config({ licenseKey });
+
 import { createApp } from 'vue';
 import { createVuetify } from 'vuetify';
 import * as components from 'vuetify/components';
