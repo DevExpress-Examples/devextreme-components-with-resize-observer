@@ -46,7 +46,6 @@ class ObserverHelper {
     delay: number,
   ): void {
     if (!resizeAction || !element) {
-      // eslint-disable-next-line no-console
       console.error('Subscription failed. No resize callback or element passed');
       return;
     }
@@ -73,7 +72,6 @@ class ObserverHelper {
   unsubscribe(key1: Element, key2: Element): void {
     const listeners = this.__resizeCallbacks.get(key1);
     if (!listeners) {
-      // eslint-disable-next-line no-console
       console.error('Unsubscribe failed');
       return;
     }
