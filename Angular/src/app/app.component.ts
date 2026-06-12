@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import type { DxDataGridTypes } from 'devextreme-angular/ui/data-grid';
 import type { DxChartTypes } from 'devextreme-angular/ui/chart';
@@ -14,6 +14,7 @@ import {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   standalone: false,
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [TestDataService, ObserverService],
 })
 export class AppComponent {
